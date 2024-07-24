@@ -11,25 +11,41 @@ const AuthContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url('https://i.pinimg.com/originals/6c/9c/79/6c9c79fbdca68a73e0ac5a0b9b828733.jpg') no-repeat center center fixed; 
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: url('https://wallpapers.com/images/high/stitch-computer-4djb09w3d4fn525h.webp') no-repeat center center fixed;
   background-size: cover;
-  background-color: pink;
+  background-color: pink; /* Cor de fundo para fallback */
+  overflow: hidden; /* Garante que não haja rolagem indesejada */
+  @media (max-width: 600px) {
+    background: url('https://i.pinimg.com/564x/1c/4e/39/1c4e39d95d2cfee380fe9364466e5b4b.jpg')
+  }
 `;
 
 const AuthBox = styled.div`
-  background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo com transparência */
+  background-color: #ffe4e1; /* rosa claro */
   border-radius: 15px;
-  padding: 40px 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  max-width: 400px;
+  padding: 20px;
+  border: 2px solid #f5b7b1;
   width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
-const Title = styled.h2`
+const Title = styled.h3`
   margin-bottom: 20px;
   font-size: 2em;
   color: #333;
+
+  @media (max-width: 600px) {
+    font-size: 1.5em;
+  }
 `;
 
 const AuthInput = styled.input`
@@ -37,7 +53,8 @@ const AuthInput = styled.input`
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: calc(100% - 22px); /* Para evitar overflow */
+  width: calc(100% - 22px); /* Subtrai padding e border para ajustar a largura */
+  box-sizing: border-box;
 `;
 
 const AuthButton = styled.button`
@@ -48,12 +65,8 @@ const AuthButton = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 100%;
-  font-size: 1em;
-
-  &:hover {
-    background-color: #0056b3;
-  }
+  width: calc(100% - 22px); /* Subtrai padding e border para ajustar a largura */
+  box-sizing: border-box;
 `;
 
 const Auth = () => {
@@ -84,7 +97,7 @@ const Auth = () => {
   return (
     <AuthContainer>
       <AuthBox>
-        <Title>Bem vindo(a)!</Title>
+        <Title>Entrar</Title>
         <AuthInput 
           type="email"
           value={email}
