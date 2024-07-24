@@ -9,8 +9,12 @@ const QuoteContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url('https://i.pinimg.com/564x/c4/f1/04/c4f104a2c55670f79fbf07550e7e6df4.jpg') no-repeat center center fixed; /* Imagem do Stitch */
+  background: url('https://wallpapers.com/images/high/stitch-computer-4triruzxq69a7ezr.webp') no-repeat center center fixed; /* Imagem do Stitch */
   background-size: cover;
+  padding: 20px;
+  @media (max-width) {
+    background: url('https://i.pinimg.com/564x/f4/fd/ea/f4fdea4e74f86781a58443c860f1b24a.jpg')
+  }
 `;
 
 const QuoteBox = styled.div`
@@ -23,6 +27,30 @@ const QuoteBox = styled.div`
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
+
+  @media (max-width: 600px) {
+    padding: 15px;
+    width: 100%;
+  }
+`;
+
+const Title = styled.h3`
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #333;
+
+  @media (max-width: 600px) {
+    font-size: 1.5em;
+  }
+`;
+
+const QuoteText = styled.p`
+  font-size: 1.2em;
+  color: #333;
+
+  @media (max-width: 600px) {
+    font-size: 1em;
+  }
 `;
 
 const ErrorText = styled.div`
@@ -96,8 +124,8 @@ const Quotes = () => {
     <QuoteContainer>
       <QuoteBox>
         <Dots />
-        <h3>Motivações para a Sopi S2</h3>
-        <p>{quote}</p>
+        <Title>Motivações para a Sopi S2</Title>
+        <QuoteText>{quote}</QuoteText>
       </QuoteBox>
     </QuoteContainer>
   );
