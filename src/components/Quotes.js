@@ -9,7 +9,7 @@ const QuoteContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url('https://i.pinimg.com/564x/a2/2a/a4/a22aa46f63aa9514d2a319541be3d84d.jpg') no-repeat center center fixed; /* Imagem do Stitch */
+  background: url('https://i.pinimg.com/564x/c4/f1/04/c4f104a2c55670f79fbf07550e7e6df4.jpg') no-repeat center center fixed; /* Imagem do Stitch */
   background-size: cover;
 `;
 
